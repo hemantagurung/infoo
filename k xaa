@@ -1,0 +1,73 @@
+
+public class DebitCard extends BankCard
+{
+    private int pinNumber; //declaring instance variable
+    private double withdrawalAmount;
+    private String dateOfWithdrawal;
+    private boolean hasWithdrawn;
+
+    /* parameterized constructor*/
+
+    public DebitCard(double balanceAmount, int cardId, String bankAccount, String issuerBank, String clientName, int pinNumber){
+        super(balanceAmount, cardId, bankAccount, issuerBank); //calling the values from super class constructor 
+        setClientName(clientName);
+        this.pinNumber = pinNumber; 
+        this.hasWithdrawn = false;
+    }
+
+    /* accessor/getter methods*/
+    public int getPinNumber(){
+        return pinNumber;//returning pinNumber to user
+    }
+
+    
+    public double getWithdrawalAmount(){
+        return withdrawalAmount; //returning withdrawalAmount to user
+    }
+
+    public String getDateOfWithdrawal(){
+        return dateOfWithdrawal; //returning dateOfWithdrawal to user
+    }
+
+    public boolean hasWithdrawn(){
+        return hasWithdrawn; //returning hasWithdrawn as boolen syntax
+    }
+
+    /* mutator/setter method for withdrawal amount*/
+    public void setWithdrawalAmount(double newAmount){
+        this.withdrawalAmount = newAmount;
+    }
+
+    /* withdraw method*/
+
+    public void withdraw(double withdrawalAmount, String dateOfWithdrawal, int enteredPin){
+        if (enteredPin == pinNumber) {
+            if (withdrawalAmount <= getBalanceAmount()) {
+                setBalanceAmount(getBalanceAmount() - withdrawalAmount); //setting balanceAmount after withdrawing amount
+                this.withdrawalAmount = withdrawalAmount;
+                this.dateOfWithdrawal = dateOfWithdrawal;
+                this.hasWithdrawn = true;
+                System.out.println("Withdrawal successful.Your New balance is: " + getBalanceAmount()); //displaying information after withdrawing
+            }
+            else {
+                System.out.println("Your balance is not enough"); //displaing information in else condition
+            }
+        }
+        else {
+            System.out.println("Invalid PIN.You can now try 4 more times"); //displaying information when enetered pin is incorrect
+        }
+    }
+
+    /* display method*/
+    public void display(){
+        super.display();
+        System.out.println("PIN : " + pinNumber); //displaying pinNumber
+        if (hasWithdrawn) {
+            System.out.println("Withdrawal amount: " + withdrawalAmount); //displaying withdrawal amount
+            System.out.println("Date of withdrawal: " + dateOfWithdrawal); //displaying date of withdrawal
+        }
+        else {
+            System.out.println("Transaction not yet carried out."); //displaying information if hasn't withdrawn
+        }
+    }
+}

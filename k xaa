@@ -68,6 +68,6 @@ public class DebitCard extends BankCard
         }
         else {
             System.out.println("Transaction not yet carried out."); //displaying information if hasn't withdrawn
-        
+            }
     }
 }

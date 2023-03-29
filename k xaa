@@ -12,7 +12,7 @@ public class DebitCard extends BankCard
         super(balanceAmount, cardId, bankAccount, issuerBank); //calling the values from super class constructor 
         setClientName(clientName);
         this.pinNumber = pinNumber; 
-        this.hasWithdrawn = false;
+        this.hasWithdrawn = false
     }
 
     /* accessor/getter methods*/

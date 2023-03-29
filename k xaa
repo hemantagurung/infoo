@@ -4,7 +4,7 @@ public class DebitCard extends BankCard
     private int pinNumber; //declaring instance variable
     private double withdrawalAmount;
     private String dateOfWithdrawal;
-    private boolean hasWithdrawn
+    private boolean hasWithdrawn;
 
     /* parameterized constructor*/
 

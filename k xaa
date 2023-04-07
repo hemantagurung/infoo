@@ -11,7 +11,7 @@ public class DebitCard extends BankCard
     public DebitCard(double balanceAmount, int cardId, String bankAccount, String issuerBank, String clientName, int pinNumber){
         super(balanceAmount, cardId, bankAccount, issuerBank); //calling the values from super class constructor 
         setClientName(clientName);
-        this.pinNumber = pinNumber
+        this.pinNumber = pinNumber;
         this.hasWithdrawn = false;
     }
 

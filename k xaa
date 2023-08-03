@@ -1,7 +1,7 @@
 
 public class DebitCard extends BankCard
 {
-
+g
 
     private int pinNumber; //declaring instance variable
     private double withdrawalAmount;

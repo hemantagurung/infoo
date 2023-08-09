@@ -35,7 +35,7 @@ public class DebitCard extends BankCard
         return hasWithdrawn; //returning hasWithdrawn as boolen syntax
     }
 
-    /* mutator/setter method for withdrawal amount*/
+   
     public void setWithdrawalAmount(double newAmount){
         this.withdrawalAmount = newAmount;
     }

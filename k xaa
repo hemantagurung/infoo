@@ -8,7 +8,7 @@ public class DebitCard extends BankCard
     private String dateOfWithdrawal;
     private boolean hasWithdrawn;
 
-    /* parameterized constructor*/
+
 
     public DebitCard(double balanceAmount, int cardId, String bankAccount, String issuerBank, String clientName, int pinNumber){
         super(balanceAmount, cardId, bankAccount, issuerBank); //calling the values from super class constructor 
@@ -17,7 +17,7 @@ public class DebitCard extends BankCard
         this.hasWithdrawn = false;
     }
 
-    /* accessor/getter methods*/
+ 
     public int getPinNumber(){
         return pinNumber;//returning pinNumber to user
     }
@@ -40,7 +40,6 @@ public class DebitCard extends BankCard
         this.withdrawalAmount = newAmount;
     }
 
-    /* withdraw method*/
 
     public void withdraw(double withdrawalAmount, String dateOfWithdrawal, int enteredPin){
         if (enteredPin == pinNumber) {
